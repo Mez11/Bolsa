@@ -33,12 +33,13 @@ public class ClienteDAO {
     String password = "usuario";
 
     public ClienteDAO() {
+        obtenerConexion();
     }
 
     public Connection obtenerConexion() {
 
         try {
-            DriverManager.getConnection("jdbc:derby://localhost:1527/CadaDeBolsaDB", "usuario", "usuario");
+            con = DriverManager.getConnection("jdbc:derby://localhost:1527/CasaDeBolsaDB", "usuario", "usuario");
             if (con != null) {
                 System.out.println("Conexion exitosa");
             }
@@ -57,7 +58,7 @@ public class ClienteDAO {
         List<Cliente> clientes = null;
         var queryM = "SELECT * FROM TABLA";
         try {
-            PreparedStatement prst = obtenerConexion().prepareStatement(queryM);
+            PreparedStatement prst = con.prepareStatement(queryM);
             ResultSet rs = prst.executeQuery(queryM);
             clientes = new ArrayList<>();
             while (rs.next()) {
