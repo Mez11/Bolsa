@@ -5,6 +5,8 @@
  */
 package casabolsa;
 
+import DAO.ClienteDAO;
+
 /**
  *
  * @author 180910_GPO_SALINAS
@@ -17,6 +19,10 @@ public class CasaBolsa {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+//        ClienteDAO con = new ClienteDAO();
+//        Cliente cliente = new Cliente(0,1,"sds",1);
+//        System.out.println("El cliente fue insertado"+cliente);
+//        
     }
     
 }
